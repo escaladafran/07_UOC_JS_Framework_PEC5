@@ -1,18 +1,22 @@
-<div class="article-card" [ngClass]="getCssClass()">
+<div class="article-card">
     <img [src]="article.imageUrl" alt="{{ article.name }}" />
     <div class="description-container">
         <h2 class='article-name'>{{ article.name }}</h2>
-        <p *ngIf="article.isOnSale" class="sale-banner">On Stock!</p>
-        <div class="quantity-selection">
+        <p [ngClass]="getCssClass()">{{ article.isOnSale ? 'On Stock!' : 'Out of Stock' }}</p>
+        <button class="toggle-btn" (click)="article.isOnSale=!article.isOnSale">Toggle</button>
+        <div *ngIf="article.isOnSale" class="quantity-selection">
             <button (click)="increaseQuantity()">+</button>
             <p id="quantity"> {{ article.quantityInCart }}</p>
             <button (click)="decreaseQuantity()"  [disabled]="article.quantityInCart === 0" >-</button>
         </div>
         
     </div>
-        <p id="prize">${{ article.price }}</p>
-      
-   
+        <p id="prize" [ngClass]="getCssClass()">${{ article.price }}</p>
+
+        
 
 </div>
+
+
+
   
