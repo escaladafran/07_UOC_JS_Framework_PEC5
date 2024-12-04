@@ -3,11 +3,11 @@
     <div class="description-container">
         <h2 class='article-name'>{{ article.name }}</h2>
         <p [ngClass]="getCssClass()">{{ article.isOnSale ? 'On Stock!' : 'Out of Stock' }}</p>
-        <button class="toggle-btn" (click)="article.isOnSale=!article.isOnSale">Toggle</button>
+        <button class="toggle-btn" (click)="article.isOnSale=!article.isOnSale">Toggle Availability</button>
         <div *ngIf="article.isOnSale" class="quantity-selection">
-            <button (click)="increaseQuantity()">+</button>
+            <button (click)="increase()">+</button>
             <p id="quantity"> {{ article.quantityInCart }}</p>
-            <button (click)="decreaseQuantity()"  [disabled]="article.quantityInCart === 0" >-</button>
+            <button (click)="decrease()"  [disabled]="article.quantityInCart === 0" >-</button>
         </div>
         
     </div>
