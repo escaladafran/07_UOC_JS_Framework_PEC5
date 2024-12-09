@@ -11,7 +11,7 @@
     font-family: "Open Sans", sans-serif;
     background-color: #F3F3F3;
     color:rgb(53, 53, 53);
-  margin:20px auto;
+    margin:20px auto;
   }
   
   img {
@@ -62,55 +62,59 @@
 
 }
 
-#prize
+#price
 {
   font-weight: bold;
   font-size: xx-large;
   align-self: flex-start;
-  margin-top: 15px;
+ 
 
 }
 
 
 
 
-
-  
-  /* .on-sale {
-    background-color: #e6ffe6;
+/* .on-sale {
+  background-color: #e6ffe6;
   
   }
   
   .outOfStock {
     background-color: #ffe6e6;
-
-  } */
-  
-  .sale-banner {
-    color: #2ecc71;
-    font-weight: bold;
-  }
-  
- 
-  .quantity-selection{
-    margin-block-start: 20px;
-    display:flex;
-    gap:15px;
-
-  }
-
-  button{
-    width:35px;
-    height:auto;
-    font-size:larger ;
-  }
-
- 
-
-  .toggle-btn{
+    
+    } */
+    
+    .sale-banner {
+      color: #2ecc71;
+      font-weight: bold;
+    }
+    
+    
+    .quantity-selection{
+      margin-block-start: 20px;
+      display:flex;
+      gap:15px;
+      
+    }
+    
+    button{
+      width:35px;
+      height:auto;
+      font-size:larger ;
+    }
+    
+    
+    .price-container{
+     
+      display:flex;
+      align-items:last baseline;
+      justify-content: center; 
+      gap:5px;
+    }
+    
+    .toggle-btn{
     width:fit-content;
     padding: 5px;
-    margin-block-start: 20px;
     font-size: medium;
   }
 

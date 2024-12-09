@@ -1,11 +1,11 @@
 import { Component,Input,Output,EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Article,ArticleQuantityChange } from '../models/articulo';
+import { Article,ArticleQuantityChange } from '../../models/articulo';
 
 
 @Component({
   selector: 'app-article-item',
-  standalone: true, // Es standalone
+  standalone: true, 
   imports: [CommonModule], // Importa CommonModule para usar directivas como ngClass
   templateUrl: './article-item.component.html',
   styleUrls: ['./article-item.component.css']
@@ -43,6 +43,8 @@ export class ArticleItemComponent {
       this.quantityChange.emit({ articleId: this.article.id, newQuantity: this.article.quantityInCart - 1 });
     }
   }
+
+
 
 }
 

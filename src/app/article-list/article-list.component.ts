@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import {Article} from '../models/articulo';
+import {Article} from '../../models/articulo';
 import { ArticleItemComponent } from '../article-item/article-item.component';
 import { CommonModule } from '@angular/common';
-import {ArticleQuantityChange} from '../models/articulo';
+
 
 @Component({
   selector: 'app-article-list',
@@ -12,9 +12,9 @@ import {ArticleQuantityChange} from '../models/articulo';
     <div>
 <div class="article-list">
     <h2>Article List</h2>
-    <div *ngFor="let article of articles">
+    <div *ngFor="let item of articles">
     <app-article-item
-        [article]="article"
+        [article]="item"
         (quantityChange)="onQuantityChange($event)">
       </app-article-item>
 
