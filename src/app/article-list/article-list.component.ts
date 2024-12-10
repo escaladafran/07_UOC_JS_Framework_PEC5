@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
     <div>
 <div class="article-list">
     <h2>Article List</h2>
-    <div *ngFor="let item of articles">
+    <div *ngFor="let item of articles" TrackBy="trackItemId">
     <app-article-item
         [article]="item"
         (quantityChange)="onQuantityChange($event)">
@@ -48,5 +48,12 @@ onQuantityChange(event: { articleId: number, newQuantity: number }) {
     article.quantityInCart = event.newQuantity;
   }
 }
+
+//función que devuelve el elemento que cambia del array
+trackItemId(index: number, article: Article): number {
+  return article.id;
+}
+
+
 
 }
