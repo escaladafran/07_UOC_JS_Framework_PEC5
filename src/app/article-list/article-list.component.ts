@@ -2,15 +2,17 @@ import { Component } from '@angular/core';
 import {Article} from '../../models/articulo';
 import { ArticleItemComponent } from '../article-item/article-item.component';
 import { CommonModule } from '@angular/common';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 
 @Component({
   selector: 'app-article-list',
   standalone: true,
-  imports: [ArticleItemComponent,CommonModule],
+  imports: [ArticleItemComponent, CommonModule, NavbarComponent],
   template: `
     <div>
 <div class="article-list">
+    <app-navbar></app-navbar>
     <h2>Article List</h2>
     <div *ngFor="let item of articles" TrackBy="trackItemId">
     <app-article-item
