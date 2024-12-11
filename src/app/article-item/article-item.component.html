@@ -1,4 +1,4 @@
-<div class="article-card">
+<div class="article-card bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
     <img [src]="article.imageUrl" alt="{{ article.name }}" />
     <div class="description-container">
         <h2 class='article-name'>{{ article.name }}</h2>
@@ -7,7 +7,7 @@
            
 
             <button 
-                class="w-11 h-11 bg-neutral-700 rounded-md flex items-center justify-center cursor-pointer transition-all duration-500"
+                class="w-11 h-11 bg-gray-800 rounded-md flex items-center justify-center cursor-pointer transition-all duration-500"
                 (click)="increase()">
                 <span class="text-white">+</span>
             </button>
@@ -18,7 +18,7 @@
                 (click)="decrease()" 
                 [disabled]="article.quantityInCart === 0" 
                 [ngClass]="{
-                    'bg-neutral-700': article.quantityInCart !== 0,   
+                    'bg-gray-800': article.quantityInCart !== 0,   
                     'bg-gray-300': article.quantityInCart === 0,     
                     'cursor-not-allowed': article.quantityInCart === 0 
                 }">
@@ -32,7 +32,25 @@
     
     <div class="price-container">
         <p id="price" [ngClass]="getCssClass()">${{ article.price }}</p>
-        <button class="toggle-btn" (click)="article.isOnSale=!article.isOnSale">Toggle</button>
+        <button class="toggle-btn 
+            text-slate-600
+            bg-gray-200 
+            hover:bg-gray-700 
+            hover:text-white
+            focus:ring-4 
+            focus:ring-blue-300
+            font-normal
+            rounded-md 
+            text-xl
+            px-2.5 py-2.5 
+            me-2 mb-20 ms-2.5
+            dark:bg-blue-600 
+            dark:hover:bg-blue-700 
+            focus:outline-none 
+            dark:focus:ring-blue-800" 
+            (click)="article.isOnSale=!article.isOnSale">Toggle
+        
+    </button>
     </div>
     
 </div>
