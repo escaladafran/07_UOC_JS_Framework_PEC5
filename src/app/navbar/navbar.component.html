@@ -34,10 +34,10 @@
           <div class="hidden sm:ml-6 sm:block">
             <div class="flex space-x-4">
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-              <a href="#" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" aria-current="page">Inicio</a>
-              <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Articulos</a>
-              <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Template</a>
-              <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Reactivo</a>
+              <a (click)="selectView('inicio')" class="rounded-md  px-3 py-2 text-sm font-medium text-white" [ngClass]="{'bg-gray-900':actualView === 'inicio'}"  aria-current="page">Inicio</a>
+              <a (click)="selectView('articulos')" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300  hover:bg-gray-700 hover:text-white" [ngClass]="{'bg-gray-900':actualView === 'articulos'}">Articulos</a>
+              <a (click)="selectView('template')" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white" [ngClass]="{'bg-gray-900':actualView === 'template'}">Template</a>
+              <a (click)="selectView('reactive')" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white" [ngClass]="{'bg-gray-900':actualView === 'reactive'}">Reactivo</a>
             </div>
           </div>
         </div>
@@ -48,18 +48,7 @@
           <!-- Profile dropdown -->
           <div class="relative ml-3">
            
-  
-            <!--
-              Dropdown menu, show/hide based on menu state.
-  
-              Entering: "transition ease-out duration-100"
-                From: "transform opacity-0 scale-95"
-                To: "transform opacity-100 scale-100"
-              Leaving: "transition ease-in duration-75"
-                From: "transform opacity-100 scale-100"
-                To: "transform opacity-0 scale-95"
-            -->
-     
+
           </div>
         </div>
       </div>
@@ -70,10 +59,10 @@
     <div class="sm:hidden" [ngClass]="{'block': isMenuOpen, 'hidden': !isMenuOpen}" id="mobile-menu">
         <div class="space-y-1 px-2 pb-3 pt-2">
           <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-          <a href="#" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">Inicio</a>
-          <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Articulos</a>
-          <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Template</a>
-          <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Reactivo</a>
+          <a (click)="selectView('inicio')" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">Inicio</a>
+          <a (click)="selectView('articulos')" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Articulos</a>
+          <a (click)="selectView('template')" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Template</a>
+          <a (click)="selectView('reactive')" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Reactivo</a>
         </div>
     </div>
 
