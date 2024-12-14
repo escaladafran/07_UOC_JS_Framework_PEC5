@@ -1,29 +1,14 @@
 
-.article-card {
-    width:800px;
-    min-height:150px;
-    padding: 25px;
-    display:flex;
-    align-items: center;
-    justify-content: space-between;
-    /* border: .7px solid #F3F3F3;
-    border-radius: 5px; */
-    font-family: "Open Sans", sans-serif;
-    /* background-color: #F3F3F3; */
-    color:rgb(53, 53, 53);
-    margin:20px auto;
-  }
+.article-card{
+  width:300px;
+  height:500px;
+}
   
   img {
-    max-width: 30%;
+   
     object-fit: contain;
-    object-position: center;
-    margin-left: 10px;
     align-self: center;
   }
-
-
-
 
 
   .on-sale
@@ -42,15 +27,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width:80%;
+    margin:0 auto;
+    text-align: center;
 }
-
-.article-name{
-    font-weight: 200;
-    font-size: large;
-    
-}
-
-
 
 
 #quantity
@@ -62,28 +42,6 @@
 
 }
 
-#price
-{
-  font-weight: bold;
-  font-size: xx-large;
-  align-self: flex-start;
- 
-
-}
-
-
-
-
-/* .on-sale {
-  background-color: #e6ffe6;
-  
-  }
-  
-  .outOfStock {
-    background-color: #ffe6e6;
-    
-    } */
-    
     .sale-banner {
       color: #2ecc71;
       font-weight: bold;
@@ -97,20 +55,9 @@
       
     }
     
-    button{
-      width:35px;
-      height:auto;
-      font-size:larger ;
-    }
+  
     
     
-    .price-container{
-     
-      display:flex;
-      align-items:last baseline;
-      justify-content: center; 
-      gap:5px;
-    }
     
     .toggle-btn{
     width:fit-content;

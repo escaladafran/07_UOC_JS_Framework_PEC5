@@ -9,44 +9,21 @@ import { ArticleNewTemplateComponent } from '../article-new-template/article-new
   selector: 'app-article-list',
   standalone: true,
   imports: [ArticleItemComponent, CommonModule, NavbarComponent,ArticleNewTemplateComponent],
-  template: `
-
-   <app-navbar (viewSelected)="onViewSelected($event)"></app-navbar>
- 
-      <div class="article-list" [ngClass]="{'hidden': this.currentView !=='inicio' && this.currentView !=='articulos'}">
-        <p class="mb-2 text-4xl font-bold tracking-tight text-gray-900 text-center mt-5   ">Article List</p>
-        <div *ngFor="let item of articles" TrackBy="trackItemId">
-          <app-article-item
-              [article]="item"
-              (quantityChange)="onQuantityChange($event)">
-            </app-article-item>
-        </div>
-    </div>
-
-    <app-article-new-template [ngClass]="this.currentView === 'template' ? 'block' : 'hidden'"></app-article-new-template> 
-
-
-  `,
-styles: [`
-  h2 { 
-    text-align: center; 
-    font-family: "Open Sans", sans-serif;
-    margin:0 auto;
-  }
-
-`]
+  templateUrl: './article-list.component.html',
+  styleUrls:['./article-list.component.css']
 })
 
 
 export class ArticleListComponent {
   articles: Article[] = [
-    { id: 1, name: 'Fender Custom Shop American Custom', imageUrl: 'https://www.stars-music.es/medias/fender/cropped-custom-shop-strat-american-custom-3s-trem-mn-xn15899-202542.png', price: 300, isOnSale: true, quantityInCart: 2 },
-    { id: 2, name: 'Gibson Les Paul', imageUrl: '../assets/Gibson.png', price: 2500, isOnSale: true, quantityInCart: 1 },
-    { id: 3, name: 'Yamaha Acoustic Guitar', imageUrl:'../assets/acoustic.png', price: 500, isOnSale: false, quantityInCart: 0 }
+    { id: 1, name: 'Fender Custom Shop American Custom', imageUrl: 'https://fast-images.static-thomann.de/pics/bdb/_52/525037/16988847_800.jpg', price: 850, isOnSale: true, quantityInCart: 2 },
+    { id: 2, name: 'Gibson Les Paul', imageUrl: 'https://fast-images.static-thomann.de/pics/bdb/_59/591160/19286086_800.jpg', price: 2500, isOnSale: true, quantityInCart: 1 },
+    { id: 3, name: 'Fender Kurt Cobain Jaguar', imageUrl:'https://fast-images.static-thomann.de/pics/bdb/_33/330952/8419411_800.jpg', price: 750, isOnSale: false, quantityInCart: 0 },
+    { id: 4, name: 'Epiphone Casino Vintage Sunburst', imageUrl:'https://fast-images.static-thomann.de/pics/bdb/_56/568059/19102558_800.jpg', price: 649, isOnSale: false, quantityInCart: 0 }
   ];
 
   currentView:string = 'inicio';
-this: any;
+
  
   onViewSelected(view:string){
   this.currentView = view;
