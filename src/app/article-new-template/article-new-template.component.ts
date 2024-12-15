@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule} from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { Article} from '../../models/articulo';
+import { Article} from '../models/articulo';
 
 
 
@@ -25,7 +25,11 @@ export class ArticleNewTemplateComponent {
 
 
 
-//metodo para mostrar por consola el objeto json (por si es necesario para la PEC....)
+  
+
+
+
+//metodo para mostrar por consola el objeto json 
 toConsole() {
   console.log('Article object:', this.article);
 }

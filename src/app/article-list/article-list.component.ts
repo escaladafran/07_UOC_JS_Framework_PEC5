@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
-import {Article} from '../../models/articulo';
+import {Article} from '../models/articulo';
 import { ArticleItemComponent } from '../article-item/article-item.component';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { ArticleNewTemplateComponent } from '../article-new-template/article-new-template.component';
+import { ArticleNewReactiveComponent } from '../article-new-reactive/article-new-reactive.component';
 
 @Component({
   selector: 'app-article-list',
   standalone: true,
-  imports: [ArticleItemComponent, CommonModule, NavbarComponent,ArticleNewTemplateComponent],
+  imports: [ArticleItemComponent, CommonModule, NavbarComponent, ArticleNewTemplateComponent, ArticleNewReactiveComponent],
   templateUrl: './article-list.component.html',
   styleUrls:['./article-list.component.css']
 })
