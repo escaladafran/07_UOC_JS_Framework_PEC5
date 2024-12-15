@@ -1,7 +1,10 @@
+
+
 import { AbstractControl, ValidationErrors, ValidatorFn } from "@angular/forms";
 
+export class CustomValidator {
 
-  export function NameArticleValidator(forbiddenName: RegExp): ValidatorFn{
+    static NameArticleValidator(forbiddenName: RegExp): ValidatorFn{
 
     return (control: AbstractControl): { [key: string]: any; } | null => {
            // Si el control no tiene valor, no hay que validarlo
@@ -19,7 +22,7 @@ import { AbstractControl, ValidationErrors, ValidatorFn } from "@angular/forms";
 
 
 
-  export function patterValidator(pattern:RegExp):ValidatorFn{
+     static patterValidator(pattern:RegExp):ValidatorFn{
     return (control: AbstractControl): ValidationErrors | null =>{
         if (!control.value) {
             return null; // No validamos si no hay valor (puedes modificar esto si es obligatorio)
@@ -31,3 +34,6 @@ import { AbstractControl, ValidationErrors, ValidatorFn } from "@angular/forms";
         };
     }
   }
+
+
+}

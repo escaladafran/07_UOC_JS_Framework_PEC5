@@ -3,8 +3,7 @@ import {FormBuilder,FormGroup,Validator, Validators} from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Article} from '../models/articulo'
 import { ReactiveFormsModule } from '@angular/forms';
-import { NameArticleValidator } from '../shared-functions/article-name.validator';
-import { patterValidator } from '../shared-functions/article-name.validator';
+import { CustomValidator } from '../custom-validator';
 
 @Component({
   selector: 'app-article-new-reactive',
@@ -44,9 +43,9 @@ Filed: any;
 constructor(private fb: FormBuilder) {
     // Inicializamos el FormGroup en el constructor
     this.myReactiveForm = this.fb.group({
-      articleName: ['',[Validators.required,NameArticleValidator(/^(prueba|test|mock|fake)$/i)]],              
+      articleName: ['',[Validators.required,CustomValidator.NameArticleValidator(/^(prueba|test|mock|fake)$/i)]],              
       articlePrice: [null,[Validators.required,Validators.min(0.1)]],           
-      imageUrl: ['',[Validators.required,patterValidator(this.urlPattern)]],                 
+      imageUrl: ['',[Validators.required,CustomValidator.patterValidator(this.urlPattern)]],                 
       isOnSale: [false]               
     
     });

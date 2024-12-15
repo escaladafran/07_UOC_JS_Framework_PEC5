@@ -1,5 +1,8 @@
 <div class="form-group block" >
-    <form class="max-w-sm mt-12 mx-auto px-10 py-5 border border-gray-200 rounded-lg shadow" #userForm="ngForm">
+    <form class="max-w-sm mt-12 mx-auto px-10 py-5 border border-gray-200 rounded-lg shadow" 
+                #userForm="ngForm"
+                (ngSubmit)="toConsole"
+                >
              
            <div ngModelGroup="text-fields"  #textFields="ngModelGroup">
                <div class="form-group mb-7">
@@ -54,7 +57,7 @@
 
                 </div>
 
-                <div class="form-group mb-5">
+                <div class="form-group mb-7">
                     <label class="block mb-1 text-sm font-medium text-gray-900 dark:text-white" for="">Image URL<span class="text-red-600"> *</span></label>
                     <input #url="ngModel"
                     class="form-control border border-gray-300 focus:border-indigo-500 text-gray-800 text-sm rounded-lg block w-full p-2.5"  
