@@ -44,7 +44,7 @@ constructor(private fb: FormBuilder) {
     this.myReactiveForm = this.fb.group({
       articleName: ['',[Validators.required,CustomValidator.NameArticleValidator(/^(prueba|test|mock|fake)$/i)]],              
       articlePrice: [null,[Validators.required,Validators.min(0.1)]],           
-      imageUrl: ['',[Validators.required,CustomValidator.patterValidator(this.urlPattern)]],                 
+      imageUrl: ['',[Validators.required,Validators.pattern(this.urlPattern)]],                 
       isOnSale: [false]               
     
     });

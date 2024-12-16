@@ -10,10 +10,16 @@ import { Article} from '../models/articulo';
   standalone: true,
   imports: [FormsModule, CommonModule],
   templateUrl: './article-new-template.component.html',
-  styleUrl: './article-new-template.component.css'
+  styleUrls: ['./article-new-template.component.css']
 })
 
+
+
+
+
 export class ArticleNewTemplateComponent {
+
+  //No usamos el constructor ya que declaramos Article como una interfaz y no como una clase
   article: Article ={
     id:0,
     name: '',
@@ -25,13 +31,18 @@ export class ArticleNewTemplateComponent {
 
 
 
-  
-
 
 
 //metodo para mostrar por consola el objeto json 
-toConsole() {
-  console.log('Article object:', this.article);
+toConsole(userForm:any) {
+
+  if(userForm.valid){
+    this.article = userForm.value.article; //'queda unido a la plantilla mediante la directiva ngModelGroup : <div ngModelGroup="article">
+    console.log('Article object:', this.article);
+  }else{
+      console.error('Article is in invalid state');
+  }
+
 }
 
 }

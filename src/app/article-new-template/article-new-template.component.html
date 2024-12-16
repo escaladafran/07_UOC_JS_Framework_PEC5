@@ -1,15 +1,21 @@
 <div class="form-group block" >
     <form class="max-w-sm mt-12 mx-auto px-10 py-5 border border-gray-200 rounded-lg shadow" 
                 #userForm="ngForm"
-                (ngSubmit)="toConsole"
+                (ngSubmit)="toConsole(userForm)"
                 >
              
-           <div ngModelGroup="text-fields"  #textFields="ngModelGroup">
+           <div ngModelGroup="article">
                <div class="form-group mb-7">
                 <h1 class="mb-7 text-left text-2xl font-bold tracking-tight text-gray-900">New Article Template</h1>
                    <label class="block mb-1 text-sm font-medium text-gray-900 dark:text-white"  for="">Article Name<span class="text-red-600"> *</span></label>
+                   
                    <!-- la sintaxis "banana-in-a-box [()]" se usa para  lograr la comunicación bidireccional modelo / vista, si solo usamos "[]" 
-                      los datos fluyen del modelos a la vista, pero no de la vista al modelo-->
+                      los datos fluyen del modelos a la vista, pero no de la vista al modelo.[ngClass]=""-->
+                
+                      <!-- con el enfoque por grupos, la comunicación se establece modificando la clase 
+                       para que tome el valor del formulario mediante la directiva 'ngModelGroup' en lulgar del two-way-binding -->
+
+
                    <input #name="ngModel"
                             class="form-control border border-gray-300   focus:border-indigo-500 text-gray-800 text-sm rounded-lg block w-full p-2.5"
                             [ngClass]="{
@@ -18,7 +24,7 @@
                           type="text" 
                           placeholder="Name" 
                           name="name"   
-                          [(ngModel)]="article.name"  
+                          ngModel  
                           required>
                        
      
@@ -43,7 +49,7 @@
                         placeholder="Price €" 
                         pattern="^\d+(\.\d+)?$"
                         name="price" 
-                        [(ngModel)]="article.price"  
+                        ngModel 
                         required>
                        
                         <div *ngIf="price.errors &&  (price.touched || userForm.submitted)">
@@ -68,7 +74,7 @@
                            placeholder="Image URL" 
                            name="url" 
                            pattern="^https:\/\/www\.[a-zA-Z0-9-]+\.[a-zA-Z]{2,6}(\/[a-zA-Z0-9-_\/\.]+)\.(jpg|jpeg|png)$"   
-                           [(ngModel)]="article.imageUrl" 
+                           ngModel
                            required>
                            
                            
@@ -92,11 +98,11 @@
                         class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300"
                         type="checkbox" 
                         name="isOnSale" 
-                         [(ngModel)]="article.isOnSale">
+                        ngModel>
                     <label class="ms-2 text-sm font-medium text-gray-900 text-center dark:text-gray-300">On Sale</label>
                 </div>
                 <div class="flex justify-center">
-                    <button (click)="toConsole()" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none items-center focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-7 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="submit">Submit</button> 
+                    <button (click)="toConsole(userForm)" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none items-center focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-7 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="submit">Submit</button> 
                 </div>
 
                 
